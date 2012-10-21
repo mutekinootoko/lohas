@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YUI Weather</title>
+
+<script src="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js"></script>
+<script>
+
+YUI().use('node', 'yql', function(Y) {
+    
+    /* 2306179 Taipei */
+    
+    Y.YQL('select * from weather.forecast where woeid=2306179', function(r) {
+        Y.one("html").set("text", JSON.stringify(r))
+    });
+    
+});
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
